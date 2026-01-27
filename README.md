@@ -50,6 +50,16 @@ O sistema permite:
 
 ---
 
+## 🎨 Layout 
+
+Pré-visualização do layout da página:
+
+<p align="center">
+  <img src="https://i.imgur.com/itbExp7.png" alt="Teste prático Layout Preview"/>
+</p>
+
+---
+
 ## ▶️ Começando (Com Docker)
 
 ```bash
