@@ -110,8 +110,13 @@ GET /api/integrations/customers/{id}
 
 ---
 
-### Listar Últimos Jobs
-GET /api/integrations/customers
+Filtros (query params opcionais):
+
+- status → PENDING | PROCESSING | SUCCESS | ERROR  
+- external_id → filtra pelo ID externo
+
+Exemplo:
+GET /api/integrations/customers?status=ERROR&external_id=123
 
 ---
 
