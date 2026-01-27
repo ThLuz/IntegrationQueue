@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    container_name: integration_app
+    working_dir: /var/www
+    volumes:
+      - ../backend:/var/www
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - integration_net
+
+  nginx:
+    image: nginx:alpine
+    container_name: integration_nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ../backend:/var/www
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - integration_net
+
+  mysql:
+    image: mysql:8.0
+    container_name: integration_mysql
+    environment:
+      MYSQL_DATABASE: integration
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    networks:
+      - integration_net
+
+  redis:
+    image: redis:alpine
+    container_name: integration_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - integration_net
+
+  queue:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    container_name: integration_queue
+    working_dir: /var/www
+    command: php artisan queue:work redis --tries=3
+    volumes:
+      - ../backend:/var/www
+    depends_on:
+      - app
+      - redis
+      - mysql
+    networks:
+      - integration_net
+
+networks:
+  integration_net:
+    driver: bridge
