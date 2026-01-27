@@ -103,11 +103,17 @@ Response:
   "status": "PENDING"
 }
 
+---
+
 ### Consultar Status
 GET /api/integrations/customers/{id}
 
+---
+
 ### Listar Últimos Jobs
 GET /api/integrations/customers
+
+---
 
 ### Fake Integração Externa
 POST /fake/external/customers
@@ -115,6 +121,8 @@ POST /fake/external/customers
 Regras:
 - external_id par → sucesso (200)
 - external_id ímpar → erro (500)
+
+---
 
 ## 🔄 Processamento Assíncrono
 
