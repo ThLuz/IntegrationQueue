@@ -58,6 +58,7 @@ cd TechnicalTest/backend
 cp .env.example .env
 # Edite o .env e defina:
 # DB_PASSWORD=root
+cd ../infra
 docker-compose up -d
 docker-compose exec app composer install
 docker-compose exec app php artisan key:generate
