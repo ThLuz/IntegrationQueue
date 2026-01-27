@@ -110,6 +110,9 @@ GET /api/integrations/customers/{id}
 
 ---
 
+### Listar Últimos Jobs
+GET /api/integrations/customers
+
 Filtros (query params opcionais):
 
 - status → PENDING | PROCESSING | SUCCESS | ERROR  
