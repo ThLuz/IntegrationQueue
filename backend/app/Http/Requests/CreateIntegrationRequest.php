@@ -29,18 +29,13 @@ class CreateIntegrationRequest extends FormRequest
         ];
     }
 
-    /**
-     * Método que força a validação a usar os dados do JSON enviado.
-     */
+
     public function validationData(): array
     {
         // Pega todos os dados do JSON enviado no corpo
         return $this->json()->all();
     }
 
-    /**
-     * Método que retorna os erros no formato JSON.
-     */
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([
