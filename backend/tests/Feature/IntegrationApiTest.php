@@ -11,9 +11,8 @@ class IntegrationApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * Testa criação de job com sucesso
-     */
+    
+    //Testa criação de job com sucesso
     public function test_create_job_success()
     {
         // Impede execução real do job durante o teste
@@ -41,9 +40,8 @@ class IntegrationApiTest extends TestCase
         Queue::assertPushed(\App\Jobs\ProcessIntegrationJob::class);
     }
 
-    /**
-     * Testa criação de job com dados inválidos (validação)
-     */
+    
+    // Testa criação de job com dados inválidos (validação) 
     public function test_create_job_validation_error()
     {
         $payload = [];
