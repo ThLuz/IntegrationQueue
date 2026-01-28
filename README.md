@@ -56,8 +56,7 @@ O sistema permite:
 git clone https://github.com/ThLuz/TechnicalTest.git
 cd TechnicalTest/backend
 cp .env.example .env
-# Edite o .env e defina:
-# DB_PASSWORD=root
+# Edite a base de dados do .env, ele já vem configurado com ambiente teste por padrão docker
 cd ../infra
 docker-compose up -d
 docker-compose exec app composer install
@@ -74,9 +73,7 @@ docker-compose exec app php artisan queue:work redis --sleep=3 --tries=3
 git clone https://github.com/ThLuz/TechnicalTest.git
 cd TechnicalTest/backend
 cp .env.example .env
-# Edite o .env e defina:
-# DB_PASSWORD=root
-# DB_HOST=127.0.0.1
+# Edite a base de dados do .env
 composer install
 php artisan key:generate
 php artisan migrate
