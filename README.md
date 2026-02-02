@@ -2,7 +2,7 @@
   <img src="https://laravel.com/img/logomark.min.svg" width="120" alt="Laravel Logo" />
 </p>
 
-<h1 align="center">Fila de Integração de Clientes</h1>
+<h1 align="center">IntegrationQueue</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.2+-blue" />
@@ -16,7 +16,7 @@
 
 ## ℹ️ Sobre o Projeto
 
-**Fila de Integração de Clientes** é um **mini-sistema backend em Laravel** que simula o processamento assíncrono de integrações com sistemas externos utilizando **filas (Queue) e Redis**.
+**IntegrationQueue** é um **mini-sistema backend em Laravel** que simula o processamento assíncrono de integrações com sistemas externos utilizando **filas (Queue) e Redis**.
 
 O sistema permite:
 
